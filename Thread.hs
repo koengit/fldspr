@@ -268,9 +268,3 @@ numThreads = "numThreads"
 
 --------------------------------------------------------------------------------
 
-zipWith' :: (a -> c) -> (a -> b -> c) -> (b -> c) -> [a] -> [b] -> [c]
-zipWith' f g h []     []     = []
-zipWith' f g h xs     []     = map f xs
-zipWith' f g h []     ys     = map h ys
-zipWith' f g h (x:xs) (y:ys) = g x y : zipWith' f g h xs ys
-
