@@ -7,6 +7,9 @@ import Expr
 data Program
   = Alloc (E Int) ((E Int -> Loc) -> ForLoop)
 
+-- for now, all blocks of memory are converted into one gigantic block.
+-- TODO: do something more sophisticated here
+
 (=:) :: Loc -> E Int -> Program
 x =: e = Alloc (num 0) (\_ -> assignFr x e)
 
