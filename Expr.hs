@@ -124,6 +124,9 @@ E (Num a)   .< E (Num b) = E (Num (if (a < b) then 1 else 0))
 E (Div a b) .< y         = E a .< (E b .* y)
 E x         .< E y       = E (x :< y)
 
+-- TODO: the above can be made a lot more powerful, but it is enough for 
+-- some examples.
+
 (?) :: E Bool -> (E a, E a) -> E a
 c         ? (x,y) | unE x == unE y = x
 c         ? (x,y) | c == E (Num 0) = y
