@@ -175,7 +175,7 @@ showpThread s prog =
   , "  /* cleaning up */"
   , "  free(threads);"
   , "  free(args);"
-  , "  free(mem);"
+  , "  free(" ++ mem ++ ");"
   , ""
   , "  if ( err ) {"
   , "    printf(\"FATAL: %d\\n\", err);"
