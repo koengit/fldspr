@@ -64,8 +64,8 @@ int f(int x)
   return x;
 }
 
-#define min(x,y) (x > y ? y : x)
-#define max(x,y) (x > y ? x : y)
+#define min(x,y) ((x) > (y) ? (y) : (x))
+#define max(x,y) ((x) > (y) ? (x) : (y))
 
 typedef struct {
   int tid;
